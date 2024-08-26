@@ -1,0 +1,75 @@
+{% extends 'apps/include_base/base.html' %}
+
+{% block body %}
+    <div class="card mb-3 shadow-sm rounded">
+        <div class="card-body">
+            <div class="container">
+                <div class="border-bottom mb-4">
+                    <div class="header_tab_menu">
+                        <div class="header_menu d-flex justify-content-center">
+                            <a href="/admin_page/statistics?period=today" class="btn btn-outline-primary mx-2">Bugun</a>
+                            <a href="/admin_page/statistics?period=last_day" class="btn btn-outline-primary mx-2">Kechagi</a>
+                            <a href="/admin_page/statistics?period=weekly"
+                               class="btn btn-outline-primary mx-2">Haftalik</a>
+                            <a href="/admin_page/statistics?period=monthly"
+                               class="btn btn-outline-primary mx-2">Oylik</a>
+                            <a href="/admin_page/statistics?period=all" class="btn btn-outline-primary mx-2">Hammasi</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="table table-hover table-bordered">
+                        <thead class="text-center bg-light">
+                        <tr>
+                            <th scope="col">Oqim</th>
+                            <th scope="col">Mahsulot</th>
+                            <th scope="col">Tashrif</th>
+                            <th scope="col">Yangi</th>
+                            <th scope="col">Dastavkaga tayyor</th>
+                            <th scope="col">Yetkazilmoqda</th>
+                            <th scope="col">Yetqazib berildi</th>
+                            <th scope="col">Telefon ko'tarmadi</th>
+                            <th scope="col">Bekor qilindi</th>
+                            <th scope="col">Arxivlandi</th>
+                        </tr>
+                        </thead>
+
+                        <tbody class="text-center">
+                        <tr class="bg-info text-white font-weight-bold">
+                            <td> JAMI</td>
+                            <td></td>
+                            <td> {{ all_count }}</td>
+                            <td> {{ all_new }}</td>
+                            <td> {{ all_ready }}</td>
+                            <td> {{ all_deliver }}</td>
+                            <td> {{ all_delivered }}</td>
+                            <td> {{ all_cant_phone }}</td>
+                            <td> {{ all_canceled }}</td>
+                            <td> {{ all_archived }}</td>
+                        </tr>
+
+                        {% for stream in streams %}
+                            <tr>
+                                <th>{{ stream.name }}</th>
+                                <th>{{ stream.product__name }}</th>
+                                <th>{{ stream.count }}</th>
+                                <td>{{ stream.new_count }}</td>
+                                <td>{{ stream.ready_count }}</td>
+                                <td>{{ stream.deliver_count }}</td>
+                                <td>{{ stream.delivered_count }}</td>
+                                <td>{{ stream.cant_phone_count }}</td>
+                                <td>{{ stream.canceled_count }}</td>
+                                <td>{{ stream.archived_count }}</td>
+
+                            </tr>
+                        {% endfor %}
+
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

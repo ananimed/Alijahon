@@ -1,0 +1,142 @@
+{% extends 'apps/include_base/base.html' %}
+
+{% block body %}
+    <div class="container mt-4">
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="mb-0">Assalomu alaykum Admin bo'limiga xush kelibsiz!</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="fs-4 fw-bold">Balans:</span>
+                            <span class="fs-4 fw-bold"
+                                  data-countup="{&quot;endValue&quot;:0,&quot;separator&quot;:&quot; &quot;}">0</span>
+                        </div>
+                        <div class="mb-3">
+                            <h5 class="text-muted">API Key:</h5>
+                            <p class="text-secondary mb-0">mUAqN6FzEHcc0PY13ejPuBwEgQBzbssI</p>
+                        </div>
+                        <div class="row g-4">
+                            <!-- Market Section -->
+                            <div class="col-sm-6 col-md-4">
+                                <div class="d-flex align-items-center p-3 border rounded shadow-sm bg-light">
+                                    <div class="icon me-3">
+                                        <i class="fas fa-store fa-2x text-primary"></i>
+                                    </div>
+                                    <div>
+                                        <a class="text-decoration-none text-dark" href="{% url 'market-list' %}">
+                                            <h5 class="mb-1">Market</h5>
+                                        </a>
+                                        <p class="mb-0 text-muted">Hozirda sotuvda bor mahsulotlar</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Streams Section -->
+                            <div class="col-sm-6 col-md-4">
+                                <div class="d-flex align-items-center p-3 border rounded shadow-sm bg-light">
+                                    <div class="icon me-3">
+                                        <i class="fas fa-stream fa-2x text-warning"></i>
+                                    </div>
+                                    <div>
+                                        <a class="text-decoration-none text-dark" href="{% url 'stream-list' %}">
+                                            <h5 class="mb-1">Oqimlar</h5>
+                                        </a>
+                                        <p class="mb-0 text-muted">Mening havolalarim</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Statistics Section -->
+                            <div class="col-sm-6 col-md-4">
+                                <div class="d-flex align-items-center p-3 border rounded shadow-sm bg-light">
+                                    <div class="icon me-3">
+                                        <i class="fas fa-chart-line fa-2x text-success"></i>
+                                    </div>
+                                    <div>
+                                        <a class="text-decoration-none text-dark" href="/admin_page/stats">
+                                            <h5 class="mb-1">Statistika</h5>
+                                        </a>
+                                        <p class="mb-0 text-muted">Sotilayotgan mahsulotlar statisikasi</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Diagrams Section -->
+                            <div class="col-sm-6 col-md-4">
+                                <div class="d-flex align-items-center p-3 border rounded shadow-sm bg-light">
+                                    <div class="icon me-3">
+                                        <i class="fas fa-pie-chart fa-2x text-info"></i>
+                                    </div>
+                                    <div>
+                                        <a class="text-decoration-none text-dark" href="/admin_page/diagrams">
+                                            <h5 class="mb-1">Diagrammalar</h5>
+                                        </a>
+                                        <p class="mb-0 text-muted">Sotilayotgan mahsulotlar statisikasi</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Requests Section -->
+                            <div class="col-sm-6 col-md-4">
+                                <div class="d-flex align-items-center p-3 border rounded shadow-sm bg-light">
+                                    <div class="icon me-3">
+                                        <i class="fas fa-envelope fa-2x text-danger"></i>
+                                    </div>
+                                    <div>
+                                        <a class="text-decoration-none text-dark" href="/admin_page/requests">
+                                            <h5 class="mb-1">So'rovlar</h5>
+                                        </a>
+                                        <p class="mb-0 text-muted">So'rovlar</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Withdraw Section -->
+                            <div class="col-sm-6 col-md-4">
+                                <div class="d-flex align-items-center p-3 border rounded shadow-sm bg-light">
+                                    <div class="icon me-3">
+                                        <i class="fas fa-wallet fa-2x text-success"></i>
+                                    </div>
+                                    <div>
+                                        <a class="text-decoration-none text-dark" href="/admin_page/withdraw">
+                                            <h5 class="mb-1">To'lovlar</h5>
+                                        </a>
+                                        <p class="mb-0 text-muted">Mening hisobim & To'lovga sorov berish</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Competition Section -->
+                            <div class="col-sm-6 col-md-4">
+                                <div class="d-flex align-items-center p-3 border rounded shadow-sm bg-light">
+                                    <div class="icon me-3">
+                                        <i class="fas fa-trophy fa-2x text-warning"></i>
+                                    </div>
+                                    <div>
+                                        <a class="text-decoration-none text-dark" href="/admin_page/competition">
+                                            <h5 class="mb-1">Konkurs</h5>
+                                        </a>
+                                        <p class="mb-0 text-muted">Konkurs sahifasi</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Coins Section -->
+                            <div class="col-sm-6 col-md-4">
+                                <div class="d-flex align-items-center p-3 border rounded shadow-sm bg-light">
+                                    <div class="icon me-3">
+                                        <i class="fas fa-coins fa-2x text-primary"></i>
+                                    </div>
+                                    <div>
+                                        <a class="text-decoration-none text-dark" href="/admin_page/coins">
+                                            <h5 class="mb-1">Tangalar</h5>
+                                        </a>
+                                        <p class="mb-0 text-muted">Tilla tangalar</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/app/vendors/countup/countUp.umd.js"></script>
+{% endblock %}

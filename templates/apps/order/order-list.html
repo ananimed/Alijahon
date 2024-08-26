@@ -1,0 +1,32 @@
+{% extends 'apps/include_base/base.html' %}
+{% load thumbnail %}
+{% block body %}
+    <div class="container mt-5">
+        <div class="card shadow-sm mb-4">
+            <div class="card-header bg-primary text-white">
+                <h2 class="mb-0">Buyurtmalarim</h2>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    {% for order in orders %}
+                        <div class="col-md-4 mb-4">
+                            <div class="card h-100 border-0 shadow-sm">
+                                <div class="card-body">
+                                    <h5 class="card-title text-primary">{{ order.product.name }}</h5>
+                                    <p class="card-text">Narxi: <strong>{{ order.product.price }} so'm</strong></p>
+                                    <p class="card-text">Soni: <strong>{{ order.quantity }}</strong></p>
+                                </div>
+                                <div class="card-footer bg-light">
+                                    <button class="btn btn-outline-primary btn-sm"
+                                            href="{% url 'product_detail' slug=order.product.slug %}">Batafsil
+                                    </button>
+
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
